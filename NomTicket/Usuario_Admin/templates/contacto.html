@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Document</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    {% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <label>asunto</label>
+        <input type="text" name="asunto">
+        <label>correo origen</label>
+        <input type="text" name="correo">
+        <label>correo destino</label>
+        <input type="text" name="correo_destino">
+        <label>mensaje</label>
+        <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+                <div class="col-md-5">
+                    <h3>{{empleados| upper}}</h3>
+                </div>
+        <div><h1 id="contraseña">{{p}}</h1></div>
+        <button type="submit">enviar</button>
+
+    </form>
+    {% endblock content %}
+</body>
+
+</html>

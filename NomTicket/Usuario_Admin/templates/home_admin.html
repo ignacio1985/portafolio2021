@@ -1,0 +1,33 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form|crispy}}
+    <div class="row titulo">
+        <div class="titulo_texto">
+            <h1>Bienvenido: {{user.username | upper}}</h1>
+        </div>
+    </div>
+    <div class="btn-group-vertical">
+            <a href="{% url 'registrar_empleado' %}" class="btn btn-warning btn-lg" style="margin:2% 1% 2% 1%">Registrar </a>
+            <br>
+            <a href="{% url 'lista_empleado' %}" class="btn btn-warning btn-lg" style="margin:2% 1% 2% 1%" >Listar</a>
+            <br>
+            <a href="{% url 'tickets_empleados' %}" class="btn btn-warning btn-lg" style="margin:2% 1% 2% 1%" >Tickets Empleados</a>
+            <br>
+            <a href="{% url 'tickets_visitantes' %}" class="btn btn-warning btn-lg" style="margin:2% 1% 2% 1%" >Tickets Invitados</a>
+    </div>
+</form>
+{% if messages %}
+{% for m in messages %}
+<script>
+    Swal.fire({
+        "title": "Información",
+        "text": "{{m}}",
+        "icon": "success"
+    })
+</script>
+{% endfor %}
+{% endif %}
+{% endblock content %}

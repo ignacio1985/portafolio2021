@@ -1,0 +1,27 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="row titulo">
+
+</div>
+
+<div class="row login-status">
+
+</div>
+<div class="row centro">
+  <div class="col">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        INGRESAR
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item" href="{% url 'login_empleado' %}">EMPLEADO</a></li>
+        <li><a class="dropdown-item" href="{% url 'login_admin' %}">ADMIN</a></li>
+        <li><a class="dropdown-item" href="{% url 'login_visitante' %}">VISITANTE</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

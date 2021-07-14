@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row titulo">
+  <div class="titulo-texto">
+    <h1>INGRESAR COMO VISITANTE</h1>
+  </div>
+</div>
+
+<div class="row centro">
+  <div class="col-lg-4 formulario-login">
+    <form action="" method="post">
+      <!--{% url 'home_visitante' %}-->
+      {% csrf_token %}
+      {{form|crispy}}
+      <div class="mb-3">
+        <label for="label_rut" class=" requiredField">INGRESE RUT</label>
+        <input type="text" id="rut_visitante" name="rut_visitante" maxlength="10"
+          class="textinput textInput form-control" required oninput="checkRut(this)" placeholder="Ingrese RUT">
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

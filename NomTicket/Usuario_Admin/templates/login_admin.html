@@ -1,0 +1,24 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row titulo">
+  <div class="titulo-texto">
+    <h1>INGRESAR COMO ADMINISTRADOR</h1>
+  </div>
+</div>
+
+<div class="row centro">
+  <div class="col-lg-4 formulario-login">
+    <form action="" method="post" autocomplete="off">
+      {% csrf_token %}
+      {{form|crispy}}
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+      <div id="mensaje">
+        {% for message in messages %}
+        <h3> {{ message }} </h3>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

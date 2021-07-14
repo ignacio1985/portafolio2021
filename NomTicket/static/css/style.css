@@ -1,0 +1,341 @@
+body{
+    background-color: #f58127;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+a, a:hover, a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+.main{
+    margin-top: 20px;   
+}
+
+.login-status{
+    height: 35px;
+}
+
+.login-status p{
+    font-size: 20px;
+}
+
+.logo{
+    margin-top: 60px;
+}
+
+.titulo{
+    margin-top: 30px;
+    height: 50px;
+}
+
+.titulo h1{
+    text-align: center;
+    font-size: 32px;
+}
+
+.centro{
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.col{
+    text-align: center;
+}
+
+.col .btn{
+    background-color: #d15b00;
+    border-color: #fff;
+    height: 60px;
+    font-size: 18px;
+}
+
+.bienvenido p{
+    float: left;
+}
+
+.boton-salir .btn{
+    background-color: #d15b00;
+    border-color: #fff;
+    font-size: 18px;
+    width: 120px;
+    height: 40px;
+    float: right;
+}
+
+.boton-salir .btn:hover{
+    background-color: #eb6434;
+}
+
+.boton-tickets-emitidos .btn{
+    background-color: #d15b00;
+    border-color: #fff;
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    float: right;
+}
+
+.boton-tickets-emitidos .btn:hover{
+    background-color: #eb6434;
+}
+
+@media (max-width: 640px) {
+    .col .btn {
+        font-size: 14px;
+    }
+    .titulo h1{
+        font-size: 24px;
+    }
+}
+
+.col .btn:hover{
+    background-color: #d1732a;
+}
+
+.nomticket-logo{
+    height: 96px;
+    text-align: center;
+}
+
+.formulario-login{
+    background-color: #d15b00;
+    padding: 20px;
+    border: #fff solid;
+}
+
+.formulario-login .btn{
+    width: 100%;
+    margin-top: 5px;
+    background-color: #d1732a;
+    border-color: #fff;
+}
+
+.formulario-login .btn:hover{
+    background-color: #eb6434;
+}
+
+.producto{
+    background-color: #d15b00;
+    height: auto;
+    padding: 20px;
+}
+
+.derecha{
+    background-color: #d15b00;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.producto-texto{
+    width: 100%;
+    height: 60px;
+}
+
+.producto-lista{
+    width: 100%; 
+    height: 300px; 
+    overflow-y: scroll;
+}
+
+.producto-unidad{
+    background-color: #eb6434;
+    border: 1px #fff solid;
+}
+
+.producto-unidad:hover{
+    background-color: #d1732a;
+}
+
+.producto-unidad p{
+    font-size: 18px;
+    margin: auto;
+}
+
+.derecha .saldo{
+    width: auto;
+    background-color: #d1732a;
+    padding: 20px;
+}
+
+.derecha .prod-seleccionados{
+    width: auto;
+    background-color: #d1732a;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.saldo h1{
+    font-size: 24px;
+}
+
+.boton-emitir-ticket{
+    justify-content: center;
+}
+
+.boton-emitir-ticket .btn{
+    background-color: #ff290d;
+    border-color: #fff;
+    font-size: 18px;
+    width: 480px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.boton-emitir-ticket .btn:hover{
+    background-color: #ff5e0d;
+}
+
+.ticket-unidad{
+    border: 0.5px solid #fff;
+}
+#titulo_principal{
+    /*margin-left: 40%;*/
+    text-align: center;
+}
+#titulo_secundario{
+    /*margin-left: 40%;*/
+    text-align: center;
+}
+#titulo_terciario{
+    /*margin-left: 40%;*/
+    text-align: center;
+}
+#tabla1{
+    text-align: center;
+}
+#mensaje{
+    text-align: center;
+}
+#fecha{
+    margin-top: revert;
+}
+#tablaemp{
+    font-size: 30px;
+    text-align: left;
+    /*border: solid 1px black;*/
+    width: max-content;
+}
+#tabl_lis_emp{
+    color:#000000;
+}
+nav.navbar {
+    background-color: #e7a559;
+}
+.btn-outline-success{
+    color:#ff290d;
+    border-color:antiquewhite;
+    background-color: transparent !important;
+}
+.btn{
+    color:#fff;
+    border: 10px;
+}
+.btn-outline-secondary {
+    color: #fff;
+    border-color: #866e60;
+}
+.boton-tickets-emitidos .btn{
+    background-color: #d15b00;
+    border-color: #fff;
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    float: right;
+}
+#titulo_lista{
+    text-align: center;
+    color:#000000;
+}
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+.bg-dark{
+	background-color: #ff9b0d!important;
+}
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 30%);
+}
+.btn-outline-dark {
+    color: #343a40;
+    border-color: #343a40;
+}
+#seleccionarproducto{
+    margin-left: auto;
+}
+#emitirticket{
+    margin-left: auto;
+}    
+/*.header .navbar {
+    background-color: transparent !important;
+}*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 1000px; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #cerrar_modal{
+      width:min-content;
+  }
+
+  #logo_nav{
+      width: 40%;
+      height: 40%;
+  }
+
+  #cantidad_productos{
+      color:#4D4D4D;
+  }
+
+  .caja_cantidad{
+      margin:1% 1% 1% 1%; 
+  }
+
+  .turno{
+      text-align: center;
+  }

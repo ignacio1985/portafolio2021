@@ -1,0 +1,115 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row titulo">
+    <div class="titulo_texto">
+        <h1>Registrar</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            <div id="div_id_rut_emp" class="control-group"> <label for="id_rut_emp" class="control-label requiredField">
+                    Rut empleado (sin puntos con guion)<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="text" name="rut_emp" class="select form-control" value="12657632-5"
+                        maxlength="10" class="textinput textInput" required="" id="id_rut_emp"> </div>
+            </div>
+            <div id="div_id_nom_emp" class="control-group"> <label for="id_nom_emp" class="control-label requiredField">
+                    Nombre<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="text" name="nom_emp" class="select form-control" value="raul"
+                        maxlength="30" class="textinput textInput" required="" id="id_nom_emp"> </div>
+            </div>
+            <div id="div_id_appaterno_emp" class="control-group"> <label for="id_appaterno_emp"
+                    class="control-label requiredField">
+                    Apellido paterno<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="text" name="appaterno_emp" class="select form-control"
+                        value="vergara" maxlength="30" class="textinput textInput" required="" id="id_appaterno_emp">
+                </div>
+            </div>
+            <div id="div_id_apmaterno_emp" class="control-group"> <label for="id_apmaterno_emp"
+                    class="control-label requiredField">
+                    Apellido materno<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="text" name="apmaterno_emp" class="select form-control"
+                        value="gutierrez" maxlength="30" class="textinput textInput" required="" id="id_apmaterno_emp">
+                </div>
+            </div>
+            <div id="div_id_clave" class="control-group"> <label for="id_clave" class="control-label requiredField">
+                    Clave<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="password" name="clave" class="select form-control"
+                        class="textinput textInput" required="" id="id_clave"> </div>
+            </div>
+            <div id="div_id_saldo" class="control-group"> <label for="id_saldo" class="control-label requiredField">
+                    Cargar Saldo<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="number" name="saldo" class="select form-control" value="378000"
+                        min="0" class="numberinput" required="" id="id_saldo"> </div>
+                <div class="controls"> <select name="saldo" class="select form-control" required="" id="id_saldo">
+                        <option value="" selected="">---------</option>
+                        <option value="264000">Administracion"264000"</option>
+                        <option value="276000">Operarios"276000"</option>
+                        <option value="378000">Jefaturas"378000"</option>
+                        <option value="450000">Gerente"450000"</option>
+                    </select> </div>
+            </div>
+            <div id="div_id_email" class="control-group"> <label for="id_email" class="control-label requiredField">
+                    Email empleado<span class="asteriskField">*</span> </label>
+                <div class="controls"> <input type="email" name="email" class="select form-control"
+                        value="raul@gmail.com" maxlength="100" class="emailinput" required="" id="id_email"> </div>
+            </div>
+            <div id="div_id_fk_empresa" class="control-group"> <label for="id_fk_empresa"
+                    class="control-label requiredField">
+                    Empresa<span class="asteriskField">*</span> </label>
+                <div class="controls"> <select name="fk_empresa" class="select form-control" required=""
+                        id="id_fk_empresa">
+                        <option value="">---------</option>
+                        <option value="1" selected="">Libros Impresos S.A</option>
+
+                    </select> </div>
+            </div>
+            <div id="div_id_fk_perfil" class="control-group"> <label for="id_fk_perfil"
+                    class="control-label requiredField">
+                    Perfil<span class="asteriskField">*</span> </label>
+                <div class="controls"> <select name="fk_perfil" class="select form-control" required=""
+                        id="id_fk_perfil">
+                        <option value="">---------</option>
+                        <option value="1">Administración</option>
+                        <option value="2" selected="">Jefaturas</option>
+                        <option value="3">Gerente</option>
+                        <option value="4">Operarios</option>
+
+                    </select> </div>
+            </div>
+            <div id="div_id_fk_turno" class="control-group"> <label for="id_fk_turno"
+                    class="control-label requiredField">
+                    Turno<span class="asteriskField">*</span> </label>
+                <div class="controls"> <select name="fk_turno" class="select form-control" required="" id="id_fk_turno">
+                        <option value="">---------</option>
+                        <option value="1">Turno AM</option>
+                        <option value="2" selected="">Turno PM</option>
+                        <option value="3">Turno NOCHE</option>
+                    </select> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                        Guardar</button>
+                </div>
+                <div class="col-md-4">
+                    <a href="/lista/" class="btn btn-secondary btn-block btn-lg">
+                        <i class="fas fa-stream"></i> Lista
+                    </a>
+                </div>
+            </div>
+        </form>
+        {% if messages %}
+        {% for m in messages %}
+        <script>
+            Swal.fire({
+                "title": "Felicitaciones",
+                "text": "{{m}}",
+                "icon": "success"
+            })
+        </script>
+        {% endfor %}
+        {% endif %}
+        {% endblock content %}

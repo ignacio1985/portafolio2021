@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+
+{% block content %} 
+  <div class="row titulo">
+      <div class="titulo-texto">
+          <h1>TICKET</h1>
+      </div>
+  </div>
+
+  <div class="row login-status">
+    <div class="col-sm-10 bienvenido">
+    </div>
+    <div class="col-sm-2 boton-tickets-emitidos">
+      <a class="btn btn-primary" href="{% url 'tickets-emitidos' %}" role="button">Ver tickets emitidos</a>
+    </div>
+  </div>
+
+  <div class="row centro">
+
+    <div class="col producto">
+      <div class="row">
+
+      </div> 
+
+    </div>
+
+  </div>
+{% endblock %}

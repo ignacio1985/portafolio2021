@@ -1,0 +1,36 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %} 
+  <div class="row titulo">
+      <div class="titulo-texto">
+          <h1>EMITIR TICKET</h1>
+      </div>
+  </div>
+
+  <div class="row login-status">
+    <div class="col-sm-6 bienvenido">
+    </div>
+    <div class="col-sm-3 boton-tickets-emitidos">
+      <a class="btn btn-primary" href="{% url 'tickets_emitidos' %}" role="button">Ver tickets emitidos</a>
+    </div>
+    <div class="col-sm-3 boton-tickets-emitidos">
+      <a class="btn btn-primary" href="{% url 'lista_productos' %}" role="button">Lista Productos</a>
+  </div>
+  </div>
+
+  <div class="row centro">
+    <div class="col producto">
+      <div class="row">
+        <form method='POST'>
+          {% csrf_token %}
+          {{form|crispy}}
+          <input type="submit", value="Emitir Ticket" />
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+

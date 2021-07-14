@@ -1,0 +1,38 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action=" " method="post">
+    {% csrf_token %}
+    {{ form | crispy}}
+    <div class="mb-3"></div>
+    <div id="div_id_rut_emp" class="form-group"> <label for="id_rut_emp" class=" requiredField">
+            Rut emp<span class="asteriskField">*</span> </label>
+        <div class=""> <input type="text" name="rut_emp" oninput="checkRut(this)"
+                class="textinput textInput form-control" required="" id="id_rut_emp"> </div>
+    </div>
+    <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+            Email<span class="asteriskField">*</span> </label>
+        <div class=""> <input type="email" name="email" placeholder="ejemplo@correo.com" class="emailinput form-control"
+                required="" id="id_email"> </div>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">enviar contraseña</buttom>
+        </div>
+        {% for EMPLEADO in empleados %}
+                <tr>
+                    <td class="col-sm-2 campo-texto">{{EMPLEADO.rut_emp}}</td>
+                    <td class="col-sm-1 campo-texto">{{EMPLEADO.nom_emp}}</td>
+                    <td class="col-sm-1 campo-texto">{{EMPLEADO.appaterno_emp}}</td>
+                    <td class="col-sm-2 campo-texto">{{EMPLEADO.fk_empresa}}</td>
+                    <td class="col-sm-1 campo-texto">{{EMPLEADO.fk_perfil}}</td>
+                    <td class="col-sm-1 campo-texto">{{EMPLEADO.fk_turno}}</td>
+                    <td class="col-sm-1 campo-texto">${{EMPLEADO.saldo}}</td>
+                    <td class="col-sm-1 campo-texto">{{EMPLEADO.email}}</td>
+                    <td>
+                        <a href="{% url 'modificar_empleado' EMPLEADO.codigo_emp %}" class="btn text-secondary px-0 ">
+                            <i class="far fa-edit fa-lg btn-lg"></i>
+                        </a>
+        {% endfor %}                
+</form>
+{% endblock content %}

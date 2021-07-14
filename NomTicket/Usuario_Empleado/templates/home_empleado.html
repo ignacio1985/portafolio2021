@@ -1,0 +1,45 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!--nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+    <a href="{% url 'logout' %}" class="btn btn-secondary btn-block btn-lg"><i class="fas fa-stream"></i>Salir</a>
+  </form>
+</nav-->
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form|crispy}}
+    <div class="row centro">
+        <table id='tablaemp'>
+            <tbody>
+                {% for EMPLEADO in empleados %}
+                <tr>                    
+                    <td>FECHA: {{ formato }}</td>
+                </tr>
+                <tr>
+                    <td>BIENVENIDO: {{EMPLEADO.nom_emp| upper}} {{ EMPLEADO.appaterno_emp| upper}}</td>
+                </tr>
+                <tr>
+                    <td>EMPRESA: {{EMPLEADO.fk_empresa}}</td>
+                </tr>
+                <tr>
+                    <td>CARGO: {{EMPLEADO.fk_perfil}}</td>
+                </tr>
+                <tr>
+                    <td>TURNO: {{EMPLEADO.fk_turno}}</td>
+                </tr>
+                <tr>
+                    <td>SU SALDO ES: $ {{EMPLEADO.saldo}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!--div class="row login-status"-->
+    <div class="btn-group-vertical">
+            <a href="{% url 'lista_productos' %}" class="btn btn-warning btn-lg">Lista Productos</a>
+            <br>
+            <a href="{% url 'tickets_emitidos' %}" class="btn btn-success btn-lg">Tickets Emitidos</a>
+    </div>
+</form>
+{% endblock content %}

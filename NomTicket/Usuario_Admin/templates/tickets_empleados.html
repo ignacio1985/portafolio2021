@@ -1,0 +1,37 @@
+{% extends "base_layout.html" %}
+{% block content %}
+{% load humanize %}
+<div class="row titulo">
+    <div class="titulo_texto">
+        <h1>Tickets Empleados</h1>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h2>Ticket Emitidos<h2>
+            <hr>
+                <table class="table table-striped table-hover table-responsive-sm">
+                    <tr>
+                        <th class="col-sm-3">RUT EMP.</th>
+                        <th class="col-sm-1">CÓDIGO TICKET</th>
+                        <th>FECHA IMPRESIÓN</th>
+                        <th>HORA INICIO</th>
+                        <th>HORA TERMINO</th>
+                        <th>VALOR TICKET</th>
+                    </tr>
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td class="col-sm-3 campo-texto">{{ticket.rut_emp}}</td>
+                        <td class="col-sm-1 campo-texto">{{ticket.codigo_ticket}}</td>
+                        <td>{{ticket.fecha_imp}}</td>
+                        <td>{{ticket.hora_vig_inicio | naturaltime }}</td>
+                        <td>{{ticket.hora_vig_termino | naturaltime }}</td>
+                        <td>${{ticket.valor | intcomma }}</td>
+                    {% endfor %}
+                    </tr>
+                </table>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "base_layout.html" %}
+{% block content %}
+{% load humanize %}
+<div class="row titulo">
+    <div class="titulo_texto">
+        {% for EMPLEADO in empleados %}
+        <h1>Historial de tickets: {{EMPLEADO.nom_emp| upper}} {{ EMPLEADO.appaterno_emp| upper}}</h1>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h2>Ticket Emitidos<h2>
+            <hr>
+                <table class="table table-striped table-hover table-responsive-sm">
+                    <tr>
+                        <th>CÓDIGO TICKET</th>
+                        <th>FECHA IMPRESIÓN</th>
+                        <th>HORA INICIO</th>
+                        <th>HORA TERMINO</th>
+                        <th>VALOR TICKET</th>
+                    </tr>
+
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ticket.codigo_ticket}}</td>
+                        <td>{{ticket.fecha_imp}}</td>
+                        <td>{{ticket.hora_vig_inicio}}</td>
+                        <td>{{ticket.hora_vig_termino}}</td>
+                        <td>${{ticket.valor | intcomma }}</td>
+                    {% endfor %}
+                    </tr>
+                </table>
+    </div>
+</div>
+
+{% endblock content %}

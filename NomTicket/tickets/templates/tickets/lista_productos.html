@@ -1,0 +1,51 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12 estado-login">
+        <h3>Bienvenido NOMBRE USUARIO</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 titulo">
+        <h1>Lista Productos</h1>
+    </div>
+</div>
+<a href="{% url 'pedido' %}">
+    <img id="cart-icon" src="{% static 'images/cart.png' %}">
+</a>
+<p id="cart"></p>
+<div class="col-md-4 orders">
+    <div class="bg-dark p-4 rounded text-light">
+        <h2 class="text-center">Lista de pedidos</h2>
+        <!--numero de pedidos-->
+        <!--ul id="cart"></ul-->
+        <!--lista productos-->
+        <ul id="pcart"></ul>
+        <!--total productos-->
+        <h4 class="text-right" id="ptotal">Total:$0</h4>
+    </div>
+</div>
+<div class="row">
+    {% for producto in productos %}
+    <div class="col-lg-6" style="margin-bottom: 10px;">
+        <!--h4 id="producto{{producto.codigo_producto}}">{{producto.nom_producto}}</h4>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <h4 id="valor{{producto.codigo_producto}}">{{producto.precio}}</h4>
+            </label>
+        </div-->
+        <div class="box-element product">
+            <h6 id="producto{{producto.codigo_producto}}"><strong>{{producto.nom_producto}}</strong></h6>
+            <hr>
+            <h6 style="font-size: 13px" id="desc{{producto.codigo_producto}}">{{producto.descripcion}}</h6>
+            <hr>
+
+            <button class="btn btn-primary add-btn" onclick="seleccionarProducto('{{ producto.codigo_producto }}')">Añadir a carrito</button>
+            <h4 style="display: inline-block; float: right" id="valor{{producto.codigo_producto}}">{{producto.precio}}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="{% static 'js/order.js' %}"></script>
+{% endblock content %}

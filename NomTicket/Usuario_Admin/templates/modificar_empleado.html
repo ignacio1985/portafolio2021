@@ -1,0 +1,50 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="row titulo">
+            <div class="titulo_texto">
+                <h1>Editar Empleado</h1>
+            </div>
+        </div>
+        <br>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form | crispy}}
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                        Guardar</button>
+                </div>
+                &nbsp;
+                <div class="col-md-3">
+                    <a onclick="muestraContraseña()" class="btn btn-warning btn-block btn-lg">
+                        <i class="fas fa-share"></i> Mostrar contraseña
+                    </a>
+                </div>
+                &nbsp;
+                <div class="col-md-3">
+                    <a onclick="escondeContraseña()" class="btn btn-warning btn-block btn-lg">
+                        <i class="fas fa-share"></i> Esconde contraseña
+                    </a>
+                </div>
+                &nbsp;
+                <div class="col-md-3">
+                    <a onclick="generaContraseña(10)" class="btn btn-warning btn-block btn-lg">
+                        <i class="fas fa-share"></i> Generar contraseña
+                    </a>
+                </div>
+                &nbsp;
+                <div class="col-md-3">
+                    <a href="{% url 'lista_empleado' %}" class="btn btn-secondary btn-block btn-lg">
+                        <i class="fas fa-stream"></i> Lista
+                    </a>
+                </div>
+            </div>
+        </form>
+        {{mensaje}}
+    </div>
+</div>
+{% endblock content %}

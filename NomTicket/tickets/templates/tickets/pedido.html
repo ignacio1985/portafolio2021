@@ -1,0 +1,39 @@
+{% extends 'base_layout_ticket.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12 estado-login">
+        <h3>Bienvenido NOMBRE USUARIO</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 titulo">
+        <h1>Resumen pedido ticket</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12" style="margin-bottom: 10px;">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="{% url 'home_empleado' %}">&#x2190; Seguir comprando</a>
+            <div class="row">
+                <div class="col-md-2" id="nombre">
+                    <h3>Nombre</h3>
+                </div>
+                <div class="col-md-5" id="descripcion">
+                    <h3>Descripción</h3>
+                </div>
+                <div class="col-md-1" id="precio">
+                    <h3>Precio</h3>
+                </div>
+                <div class="col-md-1" id="eliminar">
+                </div>
+                <div class="col-md-2" id="totalpedido">
+                    <h3>Total</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>        
+<script src="{% static 'js/pedido.js' %}"></script>        
+{% endblock content %}
